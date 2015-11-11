@@ -1,0 +1,20 @@
+{
+  "name": "Chat",
+  "description": "",
+  "homepage": "",
+  "keywords": [],
+  "author": "",
+  "private": true,
+  "dependencies": {
+    "paper-toolbar": "PolymerElements/paper-toolbar#~1.0.4",
+    "paper-icon-button": "PolymerElements/paper-icon-button#~1.0.5",
+    "paper-fab": "PolymerElements/paper-fab#~1.0.6",
+    "paper-input": "PolymerElements/paper-input#~1.0.18",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#~1.0.5",
+    "paper-card": "PolymerElements/paper-card#~1.0.7",
+    "paper-scroll-header-panel": "PolymerElements/paper-scroll-header-panel#~1.0.9",
+    "platinum-sw": "PolymerElements/platinum-sw#~1.2.3",
+    "paper-toast": "PolymerElements/paper-toast#~1.0.0",
+    "firebase-element": "PolymerElements/firebase-element#^1.0.0"
+  }
+}

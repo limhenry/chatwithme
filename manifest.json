@@ -1,0 +1,13 @@
+{
+    "name": "Chat with Me",
+    "short_name": "Chat with Me",
+    "start_url": "./?homescreen=1",
+    "display": "standalone",
+    "theme_color": "#009688",
+    "background_color": "#B2DFDB",
+    "icons": [ {
+        "sizes": "192x192",
+        "src": "img/profile.png",
+        "type": "image/png"
+    }]
+}
