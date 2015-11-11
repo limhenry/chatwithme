@@ -12,9 +12,10 @@
 
     app.updateItems = function(snapshot) {
       this.items = [];
+      console.log(snapshot);
       snapshot.forEach(function(childSnapshot) {
         var item = childSnapshot.val();
-        item.uid = childSnapshot.key();
+        console.log(item);
         this.push('items', item);
       }.bind(this));
         setTimeout(scrollToBottom, 0);
