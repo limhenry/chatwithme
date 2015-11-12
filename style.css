@@ -1,6 +1,6 @@
 body{
 	margin: 0;
-	font-family: Roboto;
+	font-family: Roboto, Arial;
 	background-color: #FAFAFA;
 	height: 100%;
 }
@@ -8,11 +8,11 @@ paper-toast{
 	z-index: 100;
 }
 form {
+	padding: 2px 0;
 	bottom: 0;
 	position: absolute;
 	width: 100%;
 	display: flex;
-	padding: 12px 0;
 	flex-direction: row;
 	align-items: center;
 	background-color: #F5F5F5;
@@ -46,22 +46,22 @@ paper-toolbar.tall{
 	bottom: 85px;
 }
 paper-card{
-	display: block;
-	width: 80%;
-	max-width: 860px;
-	margin: 0 auto;
-	top: -178px;
-	height: calc(100% - 132px);
+    display: block;
+    width: 85%;
+    max-width: 900px;
+    margin: 0 auto;
+    top: -249px;
+    height: calc(100% - 56px);
 }
 .heading{
-	height: 96px;
-	line-height: 96px;
+	height: 64px;
+	line-height: 64px;
 	padding: 0 48px;
 	background-color: #EEEEEE;
 }
 .heading h1{
 	margin: 0;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	font-weight: 400;
 	margin-right: 24px;
 }
@@ -74,12 +74,12 @@ paper-card{
 	font-size: 0.9em;
 }
 .content{
-	height: calc(100% - 178px);
+	height: calc(100% - 126px);
 	position: static;
 	overflow-y: auto;
 }
 #img_text_div{
-    padding: 16px 20px 4px 20px;
+    padding: 12px 20px 0px 20px;
 	border-bottom:1px solid #E0E0E0;
 	min-height: 62px;
 }
@@ -99,6 +99,13 @@ img{
 #item_text{
 	margin: 4px 0px;
 }
+#item_time{
+    font-weight: 400;
+    color: #5D5D5D;
+    margin: 0;
+    float: right;
+    font-size: 0.9em;
+}
 .paper-input-container-0 .unfocused-line.paper-input-container{
 	background: none;
 }
@@ -110,6 +117,11 @@ paper-input-container{
 	margin-top: -10px;
 	margin-left: 12px;
 }
+paper-fab{
+	height: 48px;
+	width: 48px;
+}
+
 @media screen and (max-width: 640px){
 	paper-card {
 		width: 100%;
