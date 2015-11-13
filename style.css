@@ -121,6 +121,14 @@ paper-fab{
 	height: 48px;
 	width: 48px;
 }
+#channel_list{
+	padding-left: 24px;
+    line-height: 68px;
+    border-bottom: 1px solid #E0E0E0;
+    min-height: 68px;
+    font-weight: 400;
+    font-size: 1.2em;
+}
 
 @media screen and (max-width: 640px){
 	paper-card {
@@ -130,7 +138,7 @@ paper-fab{
 	}
 	.content {
 		margin-top: 0px; 
-		height: calc(100% - 130px);
+		height: calc(100% - 122px);
 		position: static;
 		overflow-y: auto;	
 	}

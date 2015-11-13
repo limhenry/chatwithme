@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="style.css">
 	</head> 
 
-	<body unresolved>
+	<body class="fullbleed layout vertical" unresolved>
 		<template is="dom-bind" id="app">
 			<firebase-auth
 				auto-login
@@ -23,33 +23,48 @@
 				on-error="onFirebaseError"
 				on-login="onFirebaseLogin"></firebase-auth>
 			<paper-toast id="errorToast"></paper-toast>		
-
+			
 			<paper-toolbar class="tall"></paper-toolbar>
+			
+			<iron-pages selected="0" class="flex">
+				<paper-card>
+					<div class="heading center horizontal layout toolbar-tools style-scope paper-toolbar">
+						<h1 style="margin-left:44px; flex:1">Chat with Me</h1>
+						<paper-icon-button icon="icons:add" on-tap="createChannel" title="Create new Channel"></paper-icon-button>
+					</div>
+					<div class="content">
+						<template is="dom-repeat" items="{{channels}}">
+							<div id="channel_list" on-tap="changeChannel" value="{{item}}">#[[item]]</div>
+						</template>									
+					</div>
+				</paper-card>
 
-			<paper-card>
-				<div class="heading">
-					<h1>Chat with Me</h1>
-				</div>
-				<div class="content" id="mainContainer">
-					<template is="dom-repeat" items="{{items}}">
-						<div id="img_text_div">
-							<img src="[[item.img]]" width="50px" height="50px">
-							<div id="text_div">
-							<p id="item_time" title="[[item.date]]">[[item.time]]</p>
-								<p id="item_human">[[item.username]]</p>
-								<p id="item_text">[[item.text]]</p>
+				<paper-card>
+					<div class="heading center horizontal layout toolbar-tools style-scope paper-toolbar">
+						<paper-icon-button icon="icons:arrow-back" on-tap="backChannel"></paper-icon-button>
+						<h1 style="margin-left:4px">{{thisIsDog}}</h1>
+					</div>
+					<div class="content" id="mainContainer">
+						<template is="dom-repeat" items="{{items}}">
+							<div id="img_text_div">
+								<img src="[[item.img]]" width="50px" height="50px">
+								<div id="text_div">
+									<p id="item_time" title="[[item.date]]">[[item.time]]</p>
+									<p id="item_human">[[item.username]]</p>
+									<p id="item_text">[[item.text]]</p>
+								</div>
 							</div>
-						</div>
-					</template>				
-				</div>
-				<div class="bottom">
-					<form on-submit="addItem">
-						<paper-input placeholder="Write a message" value="{{newItemValue}}" style="width:100%"></paper-input>
-						<paper-fab icon="send" on-click="addItem"></paper-fab>
-					</form>
-				</div>
-			</paper-card>
-
+						</template>				
+					</div>
+					<div class="bottom">
+						<form on-submit="addItem">
+							<paper-input placeholder="Write a message" value="{{newItemValue}}" style="width:100%"></paper-input>
+							<paper-fab icon="send" on-click="addItem"></paper-fab>
+						</form>
+					</div>
+				</paper-card>					
+			</iron-pages>
+			
 		</template>
 
 		<script src="main.js"></script>

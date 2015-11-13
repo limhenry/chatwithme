@@ -6,6 +6,7 @@
 	var profileName = "Anonymous";
 
 	app.items = [];
+	app.channels = [];
 	app.firebaseURL = 'https://chat-with-me-2183.firebaseio.com';
 	app.firebaseProvider = 'google';
 
@@ -24,6 +25,14 @@
 			document.getElementById('mainContainer').scrollTop = 999999999999999999999999;
 		}      
 	};
+
+	app.showChannels = function(snapshot) {
+		this.channels = [];
+		snapshot.forEach(function(childSnapshot) {
+			var channel = childSnapshot.key();
+			this.push('channels', channel);
+		}.bind(this));  
+	};	
 
 	app.addItem = function(event) {
 		event.preventDefault(); // Don't send the form!
@@ -47,10 +56,31 @@
 	app.onFirebaseLogin = function(e) {
 		profilePic = e.detail.user.google.profileImageURL;
 		profileName = e.detail.user.google.displayName;
-		this.ref = new Firebase(this.firebaseURL);
+		var URRRRLLL = 'https://chat-with-me-2183.firebaseio.com/chat/';
+		this.ref = new Firebase(URRRRLLL);
+		this.ref.on('value', function(snapshot) {
+			app.showChannels(snapshot);
+		});
+	};
+
+	app.changeChannel = function(value){
+		var pages = document.querySelector('iron-pages');
+		pages.selected = 1;
+		var URRRRLLL = 'https://chat-with-me-2183.firebaseio.com/chat/' + (value.target.textContent).substring(1);
+		this.ref = new Firebase(URRRRLLL);
 		this.ref.on('value', function(snapshot) {
 			app.updateItems(snapshot);
 		});
-	};
+		app.thisIsDog = value.target.textContent;
+	}
+
+	app.backChannel = function(){
+		var pages = document.querySelector('iron-pages');
+		pages.selected = 0;		
+	}
+
+	app.createChannel = function(){
+		alert("Coming Soon");
+	}
 
 })(document);
