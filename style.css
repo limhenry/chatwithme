@@ -13,8 +13,8 @@ paper-card{
 	width: 85%;
     max-width: 900px;
 	margin: 0 auto;
-	height: calc(100% - 80px);
-	top: -250px;
+height: calc(100% - 148px);
+    top: -48px;
 }
 .heading{
 	background-color: #EEEEEE;
